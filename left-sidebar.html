@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Left Sidebar - Ion by TEMPLATED</title>
+		<title>NLUU: Natural Language Understanding Unit</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -25,14 +25,13 @@
 
 		<!-- Header -->
 			<header id="header" class="skel-layers-fixed">
-				<h1><a href="#">Ion</a></h1>
+				<h1><a href="#">Carleton Comps 16-17</a></h1>
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="left-sidebar.html">Left Sidebar</a></li>
-						<li><a href="right-sidebar.html">Right Sidebar</a></li>
-						<li><a href="no-sidebar.html">No Sidebar</a></li>
-						<li><a href="#" class="button special">Sign Up</a></li>
+						<li><a href="index.html">Overview</a></li>
+						<li><a href="left-sidebar.html">NLUU</a></li>
+						<li><a href="right-sidebar.html">Dialogue Manager</a></li>
+						<li><a href="no-sidebar.html">Task Manager</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -40,40 +39,26 @@
 		<!-- Main -->
 			<section id="main" class="wrapper style1">
 				<header class="major">
-					<h2>Left Sidebar</h2>
-					<p>Tempus adipiscing commodo ut aliquam blandit</p>
+					<h2>NLUU: Natural Language Understanding Unit</h2>
+					<p>How to handle and classify natural langugage</p>
 				</header>
 				<div class="container">
 					<div class="row">
 						<div class="4u">
 							<section>
-								<h3>Magna massa blandit</h3>
-								<p>Feugiat amet accumsan ante aliquet feugiat accumsan. Ante blandit accumsan eu amet tortor non lorem felis semper. Interdum adipiscing orci feugiat penatibus adipiscing col cubilia lorem ipsum dolor sit amet feugiat consequat.</p>
-								<ul class="actions">
-									<li><a href="#" class="button alt">Learn More</a></li>
-								</ul>
-							</section>
-							<hr />
-							<section>
-								<h3>Ante sed commodo</h3>
+								<h3>Other parts of the project</h3>
 								<ul class="alt">
-									<li><a href="#">Erat blandit risus vis adipiscing</a></li>
-									<li><a href="#">Tempus ultricies faucibus amet</a></li>
-									<li><a href="#">Arcu commodo non adipiscing quis</a></li>
-									<li><a href="#">Accumsan vis lacinia semper</a></li>
-									<li><a href="#">Erat blandit risus vis adipiscing</a></li>
-									<li><a href="#">Tempus ultricies faucibus amet</a></li>
-									<li><a href="#">Arcu commodo non adipiscing quis</a></li>
-									<li><a href="#">Accumsan vis lacinia semper</a></li>
+									<li><a href="index.html">Overview</a></li>
+									<li><a href="right-sidebar.html">Dialogue Manager</a></li>
+									<li><a href="no-sidebar.html">Task Manager</a></li>
 								</ul>
 							</section>
 						</div>
 						<div class="8u skel-cell-important">
 							<section>
-								<h2>Mollis ut adipiscing</h2>
-								<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-								<p>Vis accumsan feugiat adipiscing nisl amet adipiscing accumsan blandit accumsan sapien blandit ac amet faucibus aliquet placerat commodo. Interdum ante aliquet commodo accumsan vis phasellus adipiscing. Ornare a in lacinia. Vestibulum accumsan ac metus massa tempor. Accumsan in lacinia ornare massa amet. Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan commodo odio cubilia ac eu interdum placerat placerat arcu commodo lobortis adipiscing semper ornare pellentesque.</p>
-								<p>Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa massa primis. Tempus condimentum tempus non ac varius cubilia adipiscing placerat lorem turpis at. Aliquet lorem porttitor interdum. Amet lacus. Aliquam lobortis faucibus blandit ac phasellus. In amet magna non interdum volutpat porttitor metus a ante ac neque. Nisi turpis. Commodo col. Interdum adipiscing mollis ut aliquam id ante adipiscing commodo integer arcu amet blandit adipiscing arcu ante.</p>
+								<h2>Intent analysis and entity extraction</h2>
+								<a href="#" class="image fit"><img src="images/NLUUDS.jpg" alt="" /></a>
+								<p>The NLUU is responsible for all things relating to natural language in both input and output. We rely on third-party libraries like Python's nltk and Microsoft's LUIS (Language Understanding Intelligent Service) that deal with raw text and break it down or otherwise analyze it in a number of useful ways. The NLUU is also responsible for creating the response to any input that we get from a client. This is accomplished by using a number of templates to build the structure of our responses and then filling in any necessary information with information returned from the Dialogue Manager.</p>
 							</section>
 						</div>
 					</div>
@@ -81,21 +66,21 @@
 					<div class="row">
 						<div class="6u">
 							<section class="special">
-								<a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a>
-								<h3>Mollis adipiscing nisl</h3>
-								<p>Eget mi ac magna cep lobortis faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet. Arcu nascetur lorem adipiscing non faucibus odio nullam arcu lobortis. Aliquet ante feugiat. Turpis aliquet ac posuere volutpat lorem arcu aliquam lorem.</p>
+								<a href="#" class="image fit"><img src="images/nltk.png" alt="" /></a>
+								<h3>NLTK</h3>
+								<p>We use nltk’s part of speech tagger to extract parts of sentences that we believe are likely keywords and the VADER sentiment analyzer to identify the sentiment of a client’s utterance, stripping away semantics. Additionally, we use nltk's word stemmer and the operating system's list of words to create a dictionary whose keys are word stems and values are lists of words whose stem is the key. This allows us to effectively expand keywords into a number of related words when querying the database to hopefully provide better results. nltk can be found <a href="http://www.nltk.org/">here</a>.</p>
 								<ul class="actions">
-									<li><a href="#" class="button alt">Learn More</a></li>
+									<li><a href="http://www.nltk.org" class="button alt">Learn More</a></li>
 								</ul>
 							</section>
 						</div>
 						<div class="6u">
 							<section class="special">
-								<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
-								<h3>Neque ornare adipiscing</h3>
-								<p>Eget mi ac magna cep lobortis faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet. Arcu nascetur lorem adipiscing non faucibus odio nullam arcu lobortis. Aliquet ante feugiat. Turpis aliquet ac posuere volutpat lorem arcu aliquam lorem.</p>
+								<a href="#" class="image fit"><img src="images/cognitive-services.png" alt="" /></a>
+								<h3>LUIS</h3>
+								<p>We use Microsoft's LUIS to extract intent from a client's response. We have trained the LUIS program on a number of utterances and flagged each as a particular intent. For instance, "Register me for math of cs" yields a ScheduleClass intent, meaning that the client wants to add a class to their schedule. We then use this knowledge of what the client wants to do to determine our next actions. Microsoft LUIS is part of the Azure program, and you can make an Azure account <a href="https://azure.microsoft.com/en-us/">here</a>, and LUIS can be found <a href="https://www.luis.ai/">here</a>. We have included our LUIS JSON file so that anyone wishing to extend or use our project can train on top of our existing intents and entities instead of starting over. For our project to run, you will likely need to change the luisurl in the config.json file to match the url of the LUIS project that you create.</p>
 								<ul class="actions">
-									<li><a href="#" class="button alt">Learn More</a></li>
+									<li><a href="https://www.luis.ai/" class="button alt">Learn More</a></li>
 								</ul>
 							</section>
 						</div>
