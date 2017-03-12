@@ -90,9 +90,9 @@
 					<div class="row">
 						<div class="6u">
 							<section class="special">
-								<a href="#" class="image fit"><img src="images/nltk.png" alt="" /></a>
+								<a class="image fit"><img src="images/nltk.png" alt="" /></a>
 								<h3>NLTK</h3>
-								<p></p>
+								<p>We use nltk’s part of speech tagger to extract parts of sentences that we believe are likely keywords and the VADER sentiment analyzer to identify the sentiment of a client’s utterance, stripping away semantics. Additionally, we use nltk's word stemmer and the operating system's list of words to create a dictionary whose keys are word stems and values are lists of words whose stem is the key. This allows us to effectively expand keywords into a number of related words when querying the database to hopefully provide better results. nltk can be found <a href="http://www.nltk.org/">here</a>.</p>
 								<ul class="actions">
 									<li><a href="http://www.nltk.org" class="button alt">Learn More</a></li>
 								</ul>
@@ -100,11 +100,11 @@
 						</div>
 						<div class="6u">
 							<section class="special">
-								<a href="#" class="image fit"><img src="images/cognitive-services.png" alt="" /></a>
-								<h3>Neque ornare adipiscing</h3>
-								<p>Eget mi ac magna cep lobortis faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet. Arcu nascetur lorem adipiscing non faucibus odio nullam arcu lobortis. Aliquet ante feugiat. Turpis aliquet ac posuere volutpat lorem arcu aliquam lorem.</p>
+								<a class="image fit"><img src="images/cognitive-services.png" alt="" /></a>
+								<h3>Microsoft LUIS</h3>
+								<p>We use Microsoft's LUIS to extract intent from a client's response. We have trained the LUIS program on a number of utterances and flagged each as a particular intent. For instance, "Register me for math of cs" yields a ScheduleClass intent, meaning that the client wants to add a class to their schedule. We then use this knowledge of what the client wants to do to determine our next actions. Microsoft LUIS is part of the Azure program, and you can make an Azure account <a href="https://azure.microsoft.com/en-us/">here</a>, and LUIS can be found <a href="https://www.luis.ai/">here</a>. We have included our LUIS JSON file so that anyone wishing to extend or use our project can train on top of our existing intents and entities instead of starting over. For our project to run, you will likely need to change the luisurl in the config.json file to match the url of the LUIS project that you create.</p>
 								<ul class="actions">
-									<li><a href="#" class="button alt">Learn More</a></li>
+									<li><a href="https://www.luis.ai/" class="button alt">Learn More</a></li>
 								</ul>
 							</section>
 						</div>
@@ -118,29 +118,24 @@
 					<div class="row">
 						<div class="8u">
 							<section>
-								<h2>Mollis ut adipiscing</h2>
-								<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-								<p>Vis accumsan feugiat adipiscing nisl amet adipiscing accumsan blandit accumsan sapien blandit ac amet faucibus aliquet placerat commodo. Interdum ante aliquet commodo accumsan vis phasellus adipiscing. Ornare a in lacinia. Vestibulum accumsan ac metus massa tempor. Accumsan in lacinia ornare massa amet. Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan commodo odio cubilia ac eu interdum placerat placerat arcu commodo lobortis adipiscing semper ornare pellentesque.</p>
+								<h2>System Architecture</h2>
+								<a class="image fit"><img src="images/system-architecture.png" alt="" /></a>
+								<p>When user provides raw text input, it first passes through the Natural Lanugage Understanding Unit (NLUU) that uses NLTK and LUIS to analyze intentionality and extract entities from the sentence.
+									This information is passed on to the Dialogue Manager where the intention is taken into account to determine where the conversation is, where it will go, and what information is needed from the database.'
+									From there, the Dialogue Manager makes a request to our intelligent database, known as the Task Manager. The Task Manager has functions that provide simple APIs for accessing course data on different criteria.
+									Once that information is received, the response format is specified by the DM and the NLUU creates a raw string text response to be presented to the user.
+								</p>
 							</section>
 						</div>
 						<div class="4u">
 							<section>
-								<h3>Magna massa blandit</h3>
-								<p>Feugiat amet accumsan ante aliquet feugiat accumsan. Ante blandit accumsan eu amet tortor non lorem felis semper. Interdum adipiscing orci feugiat penatibus adipiscing col cubilia lorem ipsum dolor sit amet feugiat consequat.</p>
+								<h3>Overview</h3>
+								<p>Each component of our architecture is responsible for its own set of duties, from analyzing text to database queries.</p>
 								<ul class="actions">
-									<li><a href="#" class="button alt">Learn More</a></li>
+									<li><a href="#elements" class="button alt">Learn More</a></li>
 								</ul>
 							</section>
 							<hr />
-							<section>
-								<h3>Ante sed commodo</h3>
-								<ul class="alt">
-									<li><a href="#">Erat blandit risus vis adipiscing</a></li>
-									<li><a href="#">Tempus ultricies faucibus amet</a></li>
-									<li><a href="#">Arcu commodo non adipiscing quis</a></li>
-									<li><a href="#">Accumsan vis lacinia semper</a></li>
-								</ul>
-							</section>
 						</div>
 					</div>
 				</div>
